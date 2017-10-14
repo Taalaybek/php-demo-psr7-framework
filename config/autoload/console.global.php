@@ -1,17 +1,11 @@
 <?php
 
 use App\Console\Command;
-use Psr\Container\ContainerInterface;
 
 return [
     'dependencies' => [
         'factories' => [
-            Command\CacheClearCommand::class => function (ContainerInterface $container) {
-                return new Command\CacheClearCommand(
-                    $container->get('config')['console']['cachePaths'],
-                    $container->get(App\Service\FileManager::class)
-                );
-            },
+            Command\CacheClearCommand::class => Infrastructure\App\Console\Command\CacheClearCommandFactory::class,
         ],
     ],
     'console' => [
