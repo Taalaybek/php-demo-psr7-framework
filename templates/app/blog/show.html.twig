@@ -1,9 +1,9 @@
 {% extends 'layout/default.html.twig' %}
 
-{% block title %}{{ post.title }}{% endblock %}
+{% block title %}{{ post.metaTitle }}{% endblock %}
 
 {% block meta %}
-    <meta name="description" content="{{ post.title }}" />
+    <meta name="description" content="{{ post.meta.description }}" />
 {% endblock %}
 
 {% block breadcrumbs %}
@@ -19,7 +19,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            {{ post.date|date('Y-m-d') }}
+            {{ post.createDate|date('Y-m-d') }}
         </div>
         <div class="panel-body">{{ post.content|nl2br }}</div>
     </div>
