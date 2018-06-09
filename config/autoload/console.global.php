@@ -8,7 +8,8 @@ return [
         'factories' => [
             Command\CacheClearCommand::class => function (ContainerInterface $container) {
                 return new Command\CacheClearCommand(
-                    $container->get('config')['console']['cachePaths']
+                    $container->get('config')['console']['cachePaths'],
+                    $container->get(App\Service\FileManager::class)
                 );
             },
         ],
