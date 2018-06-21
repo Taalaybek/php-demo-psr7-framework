@@ -25,6 +25,7 @@ return [
             Command\FixtureCommand::class,
         ],
         'cachePaths' => [
+            'doctrine' => 'var/cache/doctrine',
             'twig' => 'var/cache/twig',
         ],
     ],
