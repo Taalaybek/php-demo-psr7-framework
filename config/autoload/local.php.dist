@@ -7,9 +7,13 @@ return [
         ],
     ],
 
-    'pdo' => [
-        'dsn' => 'sqlite:db/db.sqlite',
-        'username' => '',
-        'password' => '',
+    'doctrine' => [
+        'connection' => [
+            'orm_default' => [
+                'params' => [
+                    'url' => 'sqlite::db/db.sqlite',
+                ],
+            ],
+        ],
     ],
 ];
