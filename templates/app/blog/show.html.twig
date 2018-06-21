@@ -8,19 +8,19 @@
 
 {% block breadcrumbs %}
     <ul class="breadcrumb">
-        <li><a href="{{ path('home') }}">Home</a></li>
-        <li><a href="{{ path('blog') }}">Blog</a></li>
-        <li class="active">{{ post.title }}</li>
+        <li class="breadcrumb-item"><a href="{{ path('home') }}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('blog') }}">Blog</a></li>
+        <li class="breadcrumb-item active">{{ post.title }}</li>
     </ul>
 {% endblock %}
 
 {% block content %}
     <h1>{{ post.title }}</h1>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card mb-3">
+        <div class="card-header">
             {{ post.date|date('Y-m-d') }}
         </div>
-        <div class="panel-body">{{ post.content|nl2br }}</div>
+        <div class="card-body">{{ post.content|nl2br }}</div>
     </div>
 {% endblock %}
